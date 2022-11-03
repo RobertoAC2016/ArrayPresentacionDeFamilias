@@ -1,23 +1,61 @@
-﻿
+﻿//  Algoritmo donde se simula la presentacion de cada familia con las otras sin presentarse ellos mismos utilizando arrays
+
+using System.Runtime.CompilerServices;
+
 String[][] amigos_familia = new string[][]
 {
-    new string[] { "Miguel", "Sandra" },
-    new string[] { "Maite", "Alex", "Juan", "Pedro" },
-    new string[] { "Andres", "Olivia", "Azuka" },
+    new string[] { "Miguel", "Sandra" },                //  Familia 1
+    new string[] { "Maite", "Alex", "Juan", "Pedro" },  //  Familia 2
+    new string[] { "Andres", "Olivia", "Azuka" },       //  Familia 3
 };
 
-for (var i = 0; i < amigos_familia.Length; i++)
+for (var linea = 0; linea < amigos_familia.Length; linea ++)
 {
-    for (var l = 0; l < amigos_familia[i].Length; l++)
+    for (var columna = 0; columna < amigos_familia[linea].Length; columna ++)
     {
-        var soy = amigos_familia[i][l];
-        for (var x = 0; x < amigos_familia.Length; x++)
+        var soy = amigos_familia[linea][columna];
+        for (var familia = 0; familia < amigos_familia.Length; familia ++)
         {
-            if (i != x)
-                for (var e = 0; e < amigos_familia[x].Length; e++)
-                    Console.WriteLine($"Hola soy {soy}, gusto en concerte {amigos_familia[x][e]}");
+            if (linea != familia)
+                for (var otracol = 0; otracol < amigos_familia[familia].Length; otracol++)
+                {
+                    Console.WriteLine($"Hola, soy {soy}, gusto en concerle {amigos_familia[familia][otracol]}");
+                }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
